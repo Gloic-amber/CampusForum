@@ -7,18 +7,11 @@
         <groupId>com.ustc</groupId>
         <artifactId>CampusForum</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>common</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>common-core</module>
-        <module>common-tool</module>
-        <module>common-web</module>
-        <module>common-regex</module>
-        <module>common-redis</module>
-        <module>common-amqp</module>
-    </modules>
+    <groupId>com.ustc.common</groupId>
+    <artifactId>common-web</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

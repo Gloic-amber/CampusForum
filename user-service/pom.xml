@@ -11,6 +11,12 @@
 
     <artifactId>user-service</artifactId>
 
+    <packaging>pom</packaging>
+    <modules>
+        <module>user-server</module>
+        <module>user-client</module>
+    </modules>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

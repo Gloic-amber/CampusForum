@@ -10,6 +10,12 @@
     </parent>
 
     <artifactId>resource-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>resource-server</module>
+        <module>resource-client</module>
+        <module>resource-sdk</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

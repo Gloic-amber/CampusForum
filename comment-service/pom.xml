@@ -11,6 +11,13 @@
 
     <artifactId>comment-service</artifactId>
 
+    <packaging>pom</packaging>
+    <modules>
+        <module>comment-client</module>
+        <module>comment-server</module>
+        <module>comment-sdk</module>
+    </modules>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

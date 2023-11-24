@@ -10,6 +10,13 @@
     </parent>
 
     <artifactId>forum-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>forum-client</module>
+        <module>forum-server</module>
+        <module>forum-sdk</module>
+        <module>forum-content-server</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

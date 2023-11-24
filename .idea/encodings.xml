@@ -1,21 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/blink-service/blink-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blink-service/blink-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blink-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blink-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comment-service/comment-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comment-service/comment-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comment-service/comment-sdk/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comment-service/comment-sdk/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comment-service/comment-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comment-service/comment-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/comment-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/comment-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-amqp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-amqp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-regex/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-regex/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-tool/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-tool/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-content-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-content-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-sdk/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-sdk/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/forum-service/forum-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forum-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/forum-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource-service/resource-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource-service/resource-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource-service/resource-sdk/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource-service/resource-sdk/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource-service/resource-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resource-service/resource-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resource-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resource-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/user-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service/user-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service/user-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service/user-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-service/user-server/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

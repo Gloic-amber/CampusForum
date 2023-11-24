@@ -10,6 +10,10 @@
     </parent>
 
     <artifactId>blink-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>blink-server</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
