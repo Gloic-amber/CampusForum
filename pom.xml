@@ -28,12 +28,6 @@
         <module>comment-service</module>
         <module>user-service/user-client</module>
         <module>user-service/user-server</module>
-        <module>common/common-core</module>
-        <module>common/common-tool</module>
-        <module>common/common-web</module>
-        <module>common/common-regex</module>
-        <module>common/common-redis</module>
-        <module>common/common-amqp</module>
         <module>comment-service/comment-client</module>
         <module>comment-service/comment-server</module>
         <module>comment-service/comment-sdk</module>
