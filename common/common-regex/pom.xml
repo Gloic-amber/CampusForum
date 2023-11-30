@@ -9,7 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.ustc.common</groupId>
     <artifactId>common-regex</artifactId>
 
     <properties>

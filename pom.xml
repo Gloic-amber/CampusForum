@@ -21,21 +21,11 @@
     <modules>
         <module>gateway-service</module>
         <module>user-service</module>
-        <module>forum-service</module>
         <module>resource-service</module>
         <module>blink-service</module>
         <module>common</module>
         <module>comment-service</module>
-        <module>user-service/user-client</module>
-        <module>user-service/user-server</module>
-        <module>comment-service/comment-client</module>
-        <module>comment-service/comment-server</module>
-        <module>comment-service/comment-sdk</module>
-        <module>blink-service/blink-server</module>
-        <module>forum-service/forum-client</module>
-        <module>forum-service/forum-server</module>
-        <module>forum-service/forum-sdk</module>
-        <module>forum-service/forum-content-server</module>
+        <module>blog-service</module>
     </modules>
 
     <properties>

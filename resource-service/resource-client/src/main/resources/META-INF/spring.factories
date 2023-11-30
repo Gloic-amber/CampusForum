@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ustc.resource.client.fuse.ResourceClientFuse,\
+  com.ustc.resource.client.fuse.MessageClientFuse

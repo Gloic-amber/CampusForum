@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 /**
  * ClassName: VisitRecordFilter
  * Package: com.ustc.gateway.filter
- * Description: 访问记录过滤器，保存访问记录，最先执行
+ * Description: 访问记录过滤器，保存访问记录，最先执行 order=-10000
  *
  * @Author Gloic
  * @Create 2023/11/28 16:56

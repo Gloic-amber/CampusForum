@@ -5,6 +5,16 @@
     <file url="file://$PROJECT_DIR$/blink-service/blink-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blink-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blink-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-content-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-content-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-sdk/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-sdk/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/blog-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/comment-service/comment-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/comment-service/comment-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/comment-service/comment-sdk/src/main/java" charset="UTF-8" />

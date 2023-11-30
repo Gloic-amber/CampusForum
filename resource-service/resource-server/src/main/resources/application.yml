@@ -1,0 +1,22 @@
+server:
+  port: 40000
+
+mybatis-plus:
+  type-aliases-package: com.ustc.resource.pojo  # 实体对象的扫描包
+
+spring:
+  # servlet文件传输限制
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 10MB
+  # 邮箱相关
+  mail:
+    # 账号密码端口等配置在nacos上
+    default-encoding: UTF-8
+    properties:
+      mail:
+        #        debug: true # 开启发送邮件debug模式
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory

@@ -19,7 +19,7 @@ import reactor.core.publisher.Mono;
 /**
  * ClassName: AuthorizeFilter
  * Package: com.ustc.gateway.filter
- * Description: 权限认证过滤器
+ * Description: 权限认证过滤器 order=-100
  *
  * @Author Gloic
  * @Create 2023/11/28 16:55

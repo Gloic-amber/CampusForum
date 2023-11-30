@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * ClassName: IpLimitFilter
  * Package: com.ustc.gateway.filter
- * Description: ip访问限制过滤器
+ * Description: ip访问限制过滤器 order=-1
  *
  * @Author Gloic
  * @Create 2023/11/28 16:55

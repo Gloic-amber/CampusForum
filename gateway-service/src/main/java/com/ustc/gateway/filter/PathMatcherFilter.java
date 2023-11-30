@@ -19,7 +19,7 @@ import reactor.core.publisher.Mono;
 /**
  * ClassName: PathMatcherFilter
  * Package: com.ustc.gateway.filter
- * Description: 访问路径过滤器，处理必须登录的路径和不存在的路径
+ * Description: 访问路径过滤器，处理必须登录的路径和不存在的路径 order = 10
  *
  * @Author Gloic
  * @Create 2023/11/28 16:56
