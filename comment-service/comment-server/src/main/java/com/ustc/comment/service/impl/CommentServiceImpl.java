@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ustc.blog.client.BlogClient;
+import com.ustc.blog.dto.BlogDTO;
 import com.ustc.comment.mapper.CommentMapper;
 import com.ustc.comment.pojo.Comment;
 import com.ustc.comment.pojo.CommentBO;
@@ -24,8 +26,7 @@ import javax.annotation.Resource;
 import java.sql.Timestamp;
 import java.util.*;
 
-import static com.ustc.comment.sdk.MqConstants.BLOG_COMMENT_INCREASE_KEY;
-import static com.ustc.comment.sdk.MqConstants.COMMENT_TOPIC_EXCHANGE;
+import static com.ustc.comment.sdk.MqConstants.*;
 
 /**
  * ClassName: CommentServiceImpl
