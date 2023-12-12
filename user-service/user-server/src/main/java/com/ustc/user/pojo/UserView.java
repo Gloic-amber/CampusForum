@@ -11,7 +11,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @Create 2023/11/30 11:28
  * @Version 1.0
  */
-@TableName("user_view")
+//@TableName("user_view")
+@TableName("user")
 public class UserView extends User {
 
 }

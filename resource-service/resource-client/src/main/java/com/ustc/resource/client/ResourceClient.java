@@ -29,7 +29,7 @@ public interface ResourceClient {
      * @return 图片链接
      */
     @PostMapping(value = "/private/resource/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    RestResult<String> uploadBlogImage(@RequestPart MultipartFile file);
+    RestResult<String> uploadBlogImage(@RequestPart("file") MultipartFile file);
 
     /**
      * 上传头像接口
@@ -39,7 +39,7 @@ public interface ResourceClient {
      * @return 是否上传成功
      */
     @PostMapping(value = "/private/resource/avatar", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    RestResult<String> uploadAvatarImage(@RequestPart MultipartFile file, @RequestParam String name);
+    RestResult<String> uploadAvatarImage(@RequestPart("file") MultipartFile file, @RequestParam("name") String name);
 
     /**
      * 通过院校代码获取名称
@@ -48,6 +48,6 @@ public interface ResourceClient {
      * @return 高校名称
      */
     @GetMapping("/resource/university/name")
-    RestResult<String> getUniversityName(@RequestParam Integer schoolCode);
+    RestResult<String> getUniversityName(@RequestParam("schoolCode") Integer schoolCode);
 
 }

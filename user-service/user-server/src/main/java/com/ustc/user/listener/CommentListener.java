@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
+import static com.ustc.blog.sdk.BlogMqConstants.BLOG_TOPIC_EXCHANGE;
 import static com.ustc.comment.sdk.MqConstants.BLOG_COMMENT_DECREASE_KEY;
 import static com.ustc.comment.sdk.MqConstants.BLOG_COMMENT_INCREASE_KEY;
 

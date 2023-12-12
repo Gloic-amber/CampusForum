@@ -1,6 +1,8 @@
 package com.ustc.user.config;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.ustc.blog.client.BlogClient;
+import com.ustc.blog.dto.BlogGeneralDTO;
 import com.ustc.user.mapper.UserGeneralMapper;
 import com.ustc.user.pojo.UserGeneral;
 import com.ustc.user.pojo.UserView;

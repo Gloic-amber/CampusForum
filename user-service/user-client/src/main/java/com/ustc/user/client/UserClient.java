@@ -31,7 +31,7 @@ public interface UserClient {
      * @return 用户信息
      */
     @GetMapping("/user")
-    RestResult<UserDTO> getByUserId(@RequestParam Integer id);
+    RestResult<UserDTO> getByUserId(@RequestParam("id") Integer id);
 
     /**
      * 批量获取用户信息
@@ -40,7 +40,7 @@ public interface UserClient {
      * @return key为用户id，value为用户信息
      */
     @PostMapping("/user/list")
-    RestResult<Map<Integer, UserDTO>> getUserList(@RequestParam List<Integer> userIdList);
+    RestResult<Map<Integer, UserDTO>> getUserList(@RequestParam("userIdList") List<Integer> userIdList);
 
     /**
      * 批量获取用户信息
@@ -49,7 +49,7 @@ public interface UserClient {
      * @return key为用户id，value为用户信息
      */
     @PostMapping("/user/list")
-    RestResult<Map<Integer, UserDTO>> getUserList(@RequestParam Set<Integer> userIdList);
+    RestResult<Map<Integer, UserDTO>> getUserList(@RequestParam("userIdList") Set<Integer> userIdList);
 
     /**
      * 获取用户关注列表
@@ -58,7 +58,7 @@ public interface UserClient {
      * @return 关注列表
      */
     @GetMapping("/user/followId")
-    RestResult<List<Integer>> getFollowIdList(@RequestParam Integer userId);
+    RestResult<List<Integer>> getFollowIdList(@RequestParam("userId") Integer userId);
 
     /**
      * 批量查询用户各项数据统计数据
@@ -67,6 +67,6 @@ public interface UserClient {
      * @return 批量用户统计数据
      */
     @GetMapping("/user/general/map")
-    RestResult<Map<Integer, UserGeneralDTO>> getUserGeneralList(@RequestParam List<Integer> userIdList);
+    RestResult<Map<Integer, UserGeneralDTO>> getUserGeneralList(@RequestParam("userIdList") List<Integer> userIdList);
 
 }

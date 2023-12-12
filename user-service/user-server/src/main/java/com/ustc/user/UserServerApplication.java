@@ -1,10 +1,12 @@
 package com.ustc.user;
 
+import com.ustc.common.redis.autoconfig.EnableRedisSerialize;
 import com.ustc.common.tool.mybatisconfig.EnableMybatisPlusIPage;
 import com.ustc.common.web.advice.EnableDefaultExceptionAdvice;
 import com.ustc.common.web.advice.EnableDefaultResponseAdvice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -21,7 +23,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SuppressWarnings("AlibabaCommentsMustBeJavadocFormat")
 @SpringBootApplication
 @EnableAsync // 开启异步控制
-@EnableFeignClients(basePackages = {"com.ustc.resource.client", "com.ustc.forum.client"}) // 开启feign
+@EnableFeignClients(basePackages = {"com.ustc.resource.client", "com.ustc.blog.client"}) // 开启feign
 @EnableMybatisPlusIPage // 开启mybatis分页助手
 @EnableRedisSerialize // 开启RedisTemplate序列化配置
 @EnableScheduling // 开启定时任务

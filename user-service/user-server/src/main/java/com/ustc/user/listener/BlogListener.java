@@ -1,5 +1,6 @@
 package com.ustc.user.listener;
 
+import com.ustc.blog.sdk.BlogOperateDTO;
 import com.ustc.user.mapper.UserGeneralMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
@@ -10,6 +11,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+
+import static com.ustc.blog.sdk.BlogMqConstants.*;
 
 /**
  * ClassName: BlogListener

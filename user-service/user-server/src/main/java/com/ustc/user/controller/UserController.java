@@ -3,6 +3,8 @@ package com.ustc.user.controller;
 import com.ustc.common.result.RestResult;
 import com.ustc.common.web.anno.RequestLimit;
 import com.ustc.common.web.auth.AuthHelper;
+import com.ustc.resource.type.FileType;
+import com.ustc.resource.utils.FileUtils;
 import com.ustc.user.pojo.User;
 import com.ustc.user.pojo.UserGeneral;
 import com.ustc.user.pojo.UserView;

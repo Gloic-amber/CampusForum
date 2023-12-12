@@ -22,7 +22,7 @@ public interface BlogClient {
      * @return 博客信息
      */
     @GetMapping("/blog/blog")
-    RestResult<BlogDTO> getBlogInfo(@RequestParam Integer id);
+    RestResult<BlogDTO> getBlogInfo(@RequestParam("id") Integer id);
 
     /**
      * 获取用户所发表的博客各项数据
@@ -31,6 +31,6 @@ public interface BlogClient {
      * @return 用户发表博客数据统计
      */
     @GetMapping("/blog/general")
-    RestResult<List<BlogGeneralDTO>> getBlogUserGeneral(@RequestParam Integer[] userIds);
+    RestResult<List<BlogGeneralDTO>> getBlogUserGeneral(@RequestParam("userIds") Integer[] userIds);
 
 }
