@@ -106,9 +106,10 @@ public class RegisterServiceImpl extends ServiceImpl<UserSafetyMapper, UserSafet
     @Override
     public RestResult<Object> register(UserRegisterBO userRegisterBO) {
         // 1. 检查验证码是否正确
-        if (!checkMailVerify(userRegisterBO.getMail(), userRegisterBO.getMailVerify())) {
-            return RestResult.fail("验证码错误");
-        }
+        // 由于邮件服务还未使用，因此暂时不用邮箱验证码
+//        if (!checkMailVerify(userRegisterBO.getMail(), userRegisterBO.getMailVerify())) {
+//            return RestResult.fail("验证码错误");
+//        }
         // 2.检查用户名是否已经存在
         if (userService.getByUsername(userRegisterBO.getUsername()) != null) {
             return RestResult.fail("用户名已存在");

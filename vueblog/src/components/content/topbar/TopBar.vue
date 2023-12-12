@@ -44,72 +44,72 @@
 							</a>
 						</li>
 
-						<li class="" title="当前院校">
-							<a
-								href="javascript:"
-								@click="centerDialogVisible = true">
-								<el-popover
-									placement="top"
-									width="500"
-									v-model="visible"
-									:key="showschool"
-								>
-									<el-row>
-										<el-col :span="8">
-											<el-select
-												v-model="provinceId"
-												@focus="getProvinces"
-												placeholder="请选择省份"
-											>
-												<el-option
-													v-for="item in provinceList"
-													:key="item.id"
-													:label="item.name"
-													:value="item.id"
-												>
-												</el-option>
-											</el-select>
-										</el-col>
-										<el-col :span="8">
-											<el-select
-												v-model="cityId"
-												@focus="getCities"
-												placeholder="请选择城市"
-											>
-												<el-option
-													v-for="item in cityList"
-													:key="item.id"
-													:label="item.name"
-													:value="item.id"
-												>
-												</el-option>
-											</el-select>
-										</el-col>
-										<el-col :span="8">
-											<el-select
-												v-model="schoolCode"
-												@focus="getSchools"
-												placeholder="请选择学校"
-											>
-												<el-option
-													v-for="item in schoolList"
-													:key="item.id"
-													:label="item.name"
-													:value="item.code"
-												>
-												</el-option>
-											</el-select>
-										</el-col>
-									</el-row>
-									<div style="text-align: right; margin: 10px">
-										<el-button size="mini" type="text" @click="Cancel()">取消</el-button>
-										<el-button type="primary" size="mini" @click="ChangeSchool()">确定</el-button>
-									</div>
-									<el-text slot="reference">长沙大学</el-text>
-								</el-popover>
-								<!-- 资源分享 -->
-							</a>
-						</li>
+<!--						<li class="" title="当前院校">-->
+<!--							<a-->
+<!--								href="javascript:"-->
+<!--								@click="centerDialogVisible = true">-->
+<!--								<el-popover-->
+<!--									placement="top"-->
+<!--									width="500"-->
+<!--									v-model="visible"-->
+<!--									:key="showschool"-->
+<!--								>-->
+<!--									<el-row>-->
+<!--										<el-col :span="8">-->
+<!--											<el-select-->
+<!--												v-model="provinceId"-->
+<!--												@focus="getProvinces"-->
+<!--												placeholder="请选择省份"-->
+<!--											>-->
+<!--												<el-option-->
+<!--													v-for="item in provinceList"-->
+<!--													:key="item.id"-->
+<!--													:label="item.name"-->
+<!--													:value="item.id"-->
+<!--												>-->
+<!--												</el-option>-->
+<!--											</el-select>-->
+<!--										</el-col>-->
+<!--										<el-col :span="8">-->
+<!--											<el-select-->
+<!--												v-model="cityId"-->
+<!--												@focus="getCities"-->
+<!--												placeholder="请选择城市"-->
+<!--											>-->
+<!--												<el-option-->
+<!--													v-for="item in cityList"-->
+<!--													:key="item.id"-->
+<!--													:label="item.name"-->
+<!--													:value="item.id"-->
+<!--												>-->
+<!--												</el-option>-->
+<!--											</el-select>-->
+<!--										</el-col>-->
+<!--										<el-col :span="8">-->
+<!--											<el-select-->
+<!--												v-model="schoolCode"-->
+<!--												@focus="getSchools"-->
+<!--												placeholder="请选择学校"-->
+<!--											>-->
+<!--												<el-option-->
+<!--													v-for="item in schoolList"-->
+<!--													:key="item.id"-->
+<!--													:label="item.name"-->
+<!--													:value="item.code"-->
+<!--												>-->
+<!--												</el-option>-->
+<!--											</el-select>-->
+<!--										</el-col>-->
+<!--									</el-row>-->
+<!--									<div style="text-align: right; margin: 10px">-->
+<!--										<el-button size="mini" type="text" @click="Cancel()">取消</el-button>-->
+<!--										<el-button type="primary" size="mini" @click="ChangeSchool()">确定</el-button>-->
+<!--									</div>-->
+<!--									<el-text slot="reference">长沙大学</el-text>-->
+<!--								</el-popover>-->
+<!--								&lt;!&ndash; 资源分享 &ndash;&gt;-->
+<!--							</a>-->
+<!--						</li>-->
 
 					</ul>
 				</div>

@@ -3,6 +3,7 @@ package com.ustc.user.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ustc.user.pojo.UserSafety;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -28,7 +29,7 @@ public interface UserSafetyMapper extends BaseMapper<UserSafety> {
      * @return 用户账号安全数据
      */
     @Select("select * from `user`.`user_safety` where `mail` = #{mail}")
-    UserSafety selectByMail(String mail);
+    UserSafety selectByMail(@Param("mail") String mail);
 
     /**
      * 更新密码
@@ -38,7 +39,7 @@ public interface UserSafetyMapper extends BaseMapper<UserSafety> {
      * @return 影响的行数
      */
     @Update("update `user`.`user_safety` set `password` = #{password} where `user_id` = #{id};")
-    int updatePasswordById(Integer id, String password);
+    int updatePasswordById(@Param("id") Integer id, @Param("password") String password);
 
     /**
      * 更新邮箱
@@ -48,7 +49,7 @@ public interface UserSafetyMapper extends BaseMapper<UserSafety> {
      * @return 影响的行数
      */
     @Update("update `user`.`user_safety` set `mail` = #{mail} where `user_id` = #{id} ")
-    int updateMailById(Integer id, String mail);
+    int updateMailById(@Param("id") Integer id, @Param("mail") String mail);
 
     /**
      * 根据 ID 删除
@@ -58,5 +59,5 @@ public interface UserSafetyMapper extends BaseMapper<UserSafety> {
      */
     @Override
     @Update("update `user_safety` set `deleted` = #{id} where `user_id` = #{id} and `deleted` = 0")
-    int deleteById(Serializable id);
+    int deleteById(@Param("id") Serializable id);
 }
