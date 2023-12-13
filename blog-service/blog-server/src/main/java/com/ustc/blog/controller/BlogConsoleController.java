@@ -44,7 +44,8 @@ public class BlogConsoleController {
     private BlogViewService blogViewService;
 
     /**
-     * 获取创作信息
+     * TODO:获取创作信息
+     * 尚未实现
      */
     @GetMapping("/statistics-data")
     public RestResult<BlogStatisticsDataVO> getStatisticsData() {

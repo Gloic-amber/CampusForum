@@ -1,6 +1,8 @@
 package com.ustc.blog.content.service.impl;
 
+import com.ustc.blog.content.mapper.BlogDTOMapper;
 import com.ustc.blog.content.mapper.BlogRepository;
+import com.ustc.blog.content.pojo.BlogDTO;
 import com.ustc.blog.content.pojo.BlogDoc;
 import com.ustc.blog.content.pojo.BlogListVO;
 import com.ustc.blog.content.pojo.SearchQuery;
@@ -31,8 +33,14 @@ public class BlogContentServiceImpl implements BlogContentService {
     @Value("${blog.image-prefix:}")
     private String imagePrefix;
 
+    @Resource
+    private BlogDTOMapper blogDTOMapper;
+
+
+
+
     /**
-     * 搜索博客
+     * 搜索博客(在es中进行搜索
      *
      * @param searchQuery 搜索条件
      * @return 搜索到的结果
@@ -76,6 +84,16 @@ public class BlogContentServiceImpl implements BlogContentService {
         blogListVO.setTotal(searchPage.getTotalElements());
         blogListVO.setSize(searchQuery.getSize());
         return blogListVO;
+    }
+
+
+    /**
+     * 获得所有博客文档（用于导入到es中
+     * @return 所有博客文档
+     */
+    @Override
+    public List<BlogDTO> getBlogList() {
+        return blogDTOMapper.selectList(null);
     }
 
 }

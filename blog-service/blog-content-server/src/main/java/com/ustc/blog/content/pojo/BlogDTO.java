@@ -1,24 +1,26 @@
 package com.ustc.blog.content.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.Date;
 
 /**
- * Blog ES文档类型
+ * ClassName: BlogDTO
+ * Package: com.ustc.blog.content.pojo
+ * Description:
  *
- * @author css
+ * @Author Gloic
+ * @Create 2023/12/13
+ * @Version 1.0
  */
-@Data
-@Document(indexName = "blog")
-public class BlogDoc {
 
+@Data
+@TableName("blog")
+public class BlogDTO {
     /**
      * 博客id
      */
@@ -85,11 +87,5 @@ public class BlogDoc {
     @Field(type = FieldType.Integer)
     Integer writeType;
 
-    /**
-     * 由其他属性copy而来，主要用于搜索功能，并非该实体类中的成员
-     */
-    @JsonIgnore
-    @Field(type = FieldType.Text, analyzer = "ik_max_word", ignoreFields = "descriptiveContent", excludeFromSource = true)
-    String descriptiveContent;
 
 }

@@ -4,6 +4,7 @@ import com.ustc.blog.pojo.domain.LikeBlog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Map;
 
@@ -21,6 +22,6 @@ public interface LikeBlogMapper extends BaseMapper<LikeBlog> {
      * @return 在列表中点过赞的博客
      */
     @MapKey("value")
-    Map<Integer, Integer> selectMapByUserIdAndBlogIdList(Integer userId, Integer[] blogIdList);
+    Map<Integer, Integer> selectMapByUserIdAndBlogIdList(@Param("userId") Integer userId,@Param("blogIdList") Integer[] blogIdList);
 
 }

@@ -4,6 +4,7 @@ import com.ustc.blog.pojo.domain.BlogUserGeneral;
 import com.ustc.blog.pojo.domain.BlogView;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,6 +20,6 @@ public interface BlogViewMapper extends BaseMapper<BlogView> {
      * @param userIds 用户id集合
      * @return 统计数据
      */
-    List<BlogUserGeneral> selectBlogViewsByUserIds(Integer[] userIds);
+    List<BlogUserGeneral> selectBlogViewsByUserIds(@Param("userIds") Integer[] userIds);
 
 }
