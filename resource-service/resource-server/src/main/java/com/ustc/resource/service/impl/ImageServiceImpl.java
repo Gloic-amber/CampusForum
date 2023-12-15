@@ -5,12 +5,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ustc.common.result.RestResult;
 import com.ustc.common.web.utils.ResponseUtils;
 import com.ustc.resource.config.ResourcePath;
-import com.ustc.resource.exception.UploadException;
 import com.ustc.resource.mapper.ImageMapper;
 import com.ustc.resource.pojo.Image;
 import com.ustc.resource.service.ImageService;
 import com.ustc.resource.service.MinioService;
-import com.ustc.resource.service.QiNiuService;
 import io.minio.errors.MinioException;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -43,14 +41,10 @@ public class ImageServiceImpl extends ServiceImpl<ImageMapper, Image> implements
     private MinioService minioService;
 
     @Resource
-    private QiNiuService qiNiuService;
-
-    @Resource
     private ImageMapper imageMapper;
 
     @Override
     public void getAvatarImage(String file, HttpServletResponse response) {
-        // todo 这里做一个可以减小尺寸的
         getImage(file, "avatar", response);
     }
 
@@ -83,11 +77,9 @@ public class ImageServiceImpl extends ServiceImpl<ImageMapper, Image> implements
     @Override
     public String uploadAvatar(MultipartFile image, String name) {
         try {
-            // 上传图片
-            return qiNiuService.upload(image, name, "scblogs-avatar");
-        } catch (Exception e) {
-            log.error("头像上传失败:{},{}", name, e.getMessage());
-            throw new UploadException("头像上传失败");
+            return uploadImage(image, "avatar");
+        } catch (IOException | MinioException e) {
+            throw new RuntimeException(e);
         }
     }
 

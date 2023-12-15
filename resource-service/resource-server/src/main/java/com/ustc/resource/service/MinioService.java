@@ -95,21 +95,4 @@ public interface MinioService {
      */
     InputStream download(String filePath, String bucketName) throws MinioException;
 
-    /**
-     * 删除文件
-     *
-     * @param fileName   文件名
-     * @param bucketName 桶名称
-     * @throws MinioException 文件不存在
-     */
-    void removeFile(String fileName, String bucketName) throws MinioException;
-
-    /**
-     * 获取桶内文件列表
-     *
-     * @param bucketName 桶名称
-     * @throws Exception 获取失败，可能是桶不存在
-     */
-    void getObjectList(String bucketName) throws Exception;
-
 }

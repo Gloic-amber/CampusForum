@@ -150,25 +150,4 @@ public class MinioServiceImpl implements MinioService {
             throw new MinioException("文件下载异常," + e.getMessage());
         }
     }
-
-    @Override
-    public void removeFile(String fileName, String bucketName) throws MinioException {
-        try {
-            minioClient.removeObject(
-                    RemoveObjectArgs.builder().bucket(bucketName).object(fileName).build()
-            );
-        } catch (Exception e) {
-            throw new MinioException("文件删除异常," + e.getMessage());
-        }
-    }
-
-    @Override
-    public void getObjectList(String bucketName) throws Exception {
-        Iterable<Result<Item>> results = minioClient.listObjects(ListObjectsArgs.builder().bucket(bucketName).build());
-        for (Result<Item> result : results) {
-            Item item = result.get();
-            System.out.println(item.objectName());
-        }
-    }
-
 }
