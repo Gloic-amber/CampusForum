@@ -3,6 +3,7 @@ import ElementUI from 'element-ui';
 
 // axios.defaults.baseURL = "http://127.0.0.1:80"
 axios.defaults.baseURL = "http://api.scblogs.cn"
+// axios.defaults.baseURL = "/api"
 // 前置拦截
 axios.interceptors.request.use(config => {
 	return config
