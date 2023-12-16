@@ -31,12 +31,12 @@
 						</router-link>
 					</div>
 				</div>
-				<div class="roll-btn">
+				<!-- <div class="roll-btn">
 					<button>
 						<span>&lt;&gt;</span>
 						<span>换一换</span>
 					</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
