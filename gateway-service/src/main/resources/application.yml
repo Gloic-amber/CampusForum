@@ -17,7 +17,7 @@ spring:
         - id: resource-server
           uri: lb://resource-server
           predicates:
-            - Path=/resource/**
+            - Path=/resource/**,/private/**
         # 图片直链
         - id: resource-image
           uri: lb://resource-server

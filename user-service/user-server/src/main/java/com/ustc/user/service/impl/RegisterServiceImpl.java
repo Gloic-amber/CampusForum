@@ -124,7 +124,7 @@ public class RegisterServiceImpl extends ServiceImpl<UserSafetyMapper, UserSafet
         user.setSchoolCode(userRegisterBO.getSchoolCode());
         user.setUsername(userRegisterBO.getUsername());
         user.setNickname(userRegisterBO.getUsername());
-        user.setAvatarUrl(UserConfig.DefaultAvatar);
+        user.setAvatarUrl("http://127.0.0.1/resource/avatar/"+UserConfig.DefaultAvatar);
         user.setRegisterTime(new Timestamp(System.currentTimeMillis()));
         if (userMapper.insert(user) != 1) {
             throw new MapperException("注册失败，信息异常", user);
@@ -139,7 +139,7 @@ public class RegisterServiceImpl extends ServiceImpl<UserSafetyMapper, UserSafet
             throw new MapperException("注册失败，信息异常", userSafety);
         }
         // 6.从redis中删除验证码
-        stringRedisTemplate.delete(REGISTER_MAIL_CODE_KEY + userRegisterBO.getMail());
+//        stringRedisTemplate.delete(REGISTER_MAIL_CODE_KEY + userRegisterBO.getMail());
         // 7. 增加用户数据统计表数据
         UserGeneral userGeneral = new UserGeneral();
         userGeneral.setUserId(user.getId());

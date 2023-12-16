@@ -166,13 +166,18 @@ public class UserServiceImpl extends ServiceImpl<UserViewMapper, UserView> imple
         log.debug("updateAvatar,id->{}, fileName->{}", id, avatarFile.getOriginalFilename());
         // 默认头像才需要更新数据库，非默认头像无需更新数据库
         User user = userMapper.selectById(id);
-        if (UserConfig.DefaultAvatar.equals(user.getAvatarUrl())) {
-            // 拼接文件名的字符串，使用 userid+username 的格式来命名文件
-            user.setAvatarUrl(user.getId() + "_" + user.getUsername());
-            objectRedisTemplate.delete(USER_SERVICE_INFO_KEY + id);
-            userMapper.updateById(user);
-        }
+//        if (UserConfig.DefaultAvatar.equals(user.getAvatarUrl())) {
+//            // 拼接文件名的字符串，使用 userid+username 的格式来命名文件
+//            user.setAvatarUrl(user.getId() + "_" + user.getUsername());
+//            objectRedisTemplate.delete(USER_SERVICE_INFO_KEY + id);
+//            userMapper.updateById(user);
+//        }
+        // 上传照片
         RestResult<String> result = resourceClient.uploadAvatarImage(avatarFile, user.getAvatarUrl());
+        // 更新数据库
+        user.setAvatarUrl(result.getData());
+        objectRedisTemplate.delete(USER_SERVICE_INFO_KEY + id);
+        userMapper.updateById(user);
         return result.getStatus() ? result.getData() : null;
     }
 

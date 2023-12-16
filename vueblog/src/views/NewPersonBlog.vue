@@ -36,7 +36,7 @@
             </div>
             <div class="middle">
                 <!-- 中部导航部分使用封装的子组件NewPersonBlogContent-->
-                <NewPersonBlogContent :userId="userMessage.id" :avatarUrl="userMessage.avatarUrl" :username="userMessage.nickname"/>
+                <NewPersonBlogContent :userId="userMessage.id" :avatarUrl=" userMessage.avatarUrl" :username="userMessage.nickname"/>
             </div>
 <!--            <div class="down">-->
 <!--                &lt;!&ndash; 底部信息 &ndash;&gt;-->

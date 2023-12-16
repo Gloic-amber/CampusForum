@@ -50,7 +50,7 @@ public class ImageServiceImpl extends ServiceImpl<ImageMapper, Image> implements
 
     @Override
     public void getGeneralImage(String file, HttpServletResponse response) {
-        boolean image = getImage(file, "image", response);
+        boolean image = getImage(file, ResourcePath.imageBucket, response);
         // 访问成功的话，图片访问量加1
         if (image) {
             imageMapper.increaseVisit(file);
@@ -77,7 +77,7 @@ public class ImageServiceImpl extends ServiceImpl<ImageMapper, Image> implements
     @Override
     public String uploadAvatar(MultipartFile image, String name) {
         try {
-            return uploadImage(image, "avatar");
+            return uploadImage(image, ResourcePath.avatarBucket);
         } catch (IOException | MinioException e) {
             throw new RuntimeException(e);
         }
@@ -105,7 +105,7 @@ public class ImageServiceImpl extends ServiceImpl<ImageMapper, Image> implements
                 minioService.upload(image, md5, bucketName);
             }
             // 返回访问链接
-            return ResourcePath.imageUrlBase + md5;
+            return ResourcePath.imageUrlBase + bucketName + "/" + md5;
         }
     }
 
