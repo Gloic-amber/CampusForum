@@ -2,17 +2,27 @@
 	<div class="container">
 		<top-bar class="top-bar"></top-bar>
 		<div class="top-content">
-
 			<div class="main-container">
 				<div class="grid-content">
-					<Swiper class="swiper"/>
-					<div class="main-right-item" v-for="(item, index) in mainRightBlogList" :key="index">
+					<Swiper class="swiper" />
+					<div
+						class="main-right-item"
+						v-for="(item, index) in mainRightBlogList"
+						:key="index"
+					>
 						<router-link
 							:to="{ name: 'BlogDetail', params: { blogId: item.id } }"
 							target="_blank"
 						>
 							<div class="item-img">
-								<img :src="item.coverImage?item.coverImage:require('../../assets/img/home/003.jpg')" alt=""/>
+								<img
+									:src="
+										item.coverImage
+											? item.coverImage
+											: require('../../assets/img/home/003.jpg')
+									"
+									alt=""
+								/>
 							</div>
 							<div class="item-title">
 								{{ item.title }}
@@ -21,12 +31,12 @@
 						</router-link>
 					</div>
 				</div>
-				<div class="roll-btn">
+				<!-- <div class="roll-btn">
 					<button>
 						<span>&lt;&gt;</span>
 						<span>换一换</span>
 					</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
@@ -37,13 +47,13 @@
 				<div class="tabs">
 					<el-tabs v-model="activeName" @tab-click="handleClick">
 						<el-tab-pane label="关注" name="first">
-							<FollowArticleItem/>
+							<FollowArticleItem />
 						</el-tab-pane>
 						<el-tab-pane label="推荐" name="second">
-							<RecommendArticleItem style="margin-top: 2px"/>
+							<RecommendArticleItem style="margin-top: 2px" />
 						</el-tab-pane>
 						<el-tab-pane label="最新" name="third">
-							<NewArticleItem/>
+							<NewArticleItem />
 						</el-tab-pane>
 						<!--            <el-tab-pane label="热榜" name="fourth">热榜</el-tab-pane>-->
 					</el-tabs>
@@ -51,8 +61,7 @@
 			</div>
 
 			<!-- 右边-->
-			<div class="article-right">
-				<!--        关于我们-->
+			<!--  <div class="article-right">
 				<div class="template">
 					<div class="template-title">
 						<span>关于我们</span>
@@ -61,48 +70,63 @@
 						<div class="hot1">
 							<div class="our-content">
 								<div>
-									<div style="display: flex;justify-content: center;margin-bottom: 10px">
-										<a target="_blank" href="https://github.com/stick-i/scblogs"
-											 style="color:#555666;">GitHub地址&nbsp;</a>
+									<div
+										style="
+											display: flex;
+											justify-content: center;
+											margin-bottom: 10px;
+										"
+									>
+										<a
+											target="_blank"
+											href="https://github.com/stick-i/scblogs"
+											style="color: #555666"
+											>GitHub地址&nbsp;</a
+										>
 										|
-										<a target="_blank" href="https://gitee.com/sticki/scblogs"
-											 style="color:#555666;">&nbsp;Gitee地址</a>
+										<a
+											target="_blank"
+											href="https://gitee.com/sticki/scblogs"
+											style="color: #555666"
+											>&nbsp;Gitee地址</a
+										>
 									</div>
-									<a target="_blank" href="https://beian.miit.gov.cn/" style="
-												display:flex;
-												justify-content: center;
-                        height: 20px;
-                        line-height: 20px;
-                        color: #939393;
-                        margin-bottom: 10px
-                      ">湘ICP备2021015916号-2</a>
+									<a
+										target="_blank"
+										href="https://beian.miit.gov.cn/"
+										style="
+											display: flex;
+											justify-content: center;
+											height: 20px;
+											line-height: 20px;
+											color: #939393;
+											margin-bottom: 10px;
+										"
+										>湘ICP备2021015916号-2</a
+									>
 									<a
 										target="_blank"
 										href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=43010502001444"
 										style="
-                      display: flex;
-                      justify-content: center;
-                      text-decoration: none;
-                      height: 20px;
-                      line-height: 20px;
-                      margin-bottom: 10px
-                    "
+											display: flex;
+											justify-content: center;
+											text-decoration: none;
+											height: 20px;
+											line-height: 20px;
+											margin-bottom: 10px;
+										"
 									>
 										<img
 											src="../../assets/img/home/备案图标.png"
-											style="
-                        width: 20px;
-                        height: 20px;
-                        line-height: 20px;
-                      "
+											style="width: 20px; height: 20px; line-height: 20px"
 										/>
 										<p
 											style="
-                        height: 20px;
-                        line-height: 20px;
-                        margin: 0px 0px 0px 5px;
-                        color: #939393;
-                      "
+												height: 20px;
+												line-height: 20px;
+												margin: 0px 0px 0px 5px;
+												color: #939393;
+											"
 										>
 											湘公网安备 43010502001444号
 										</p>
@@ -112,7 +136,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </template>
@@ -141,7 +165,7 @@ export default {
 		};
 	},
 	created() {
-		this.getData()
+		this.getData();
 	},
 	methods: {
 		handleClick(tab, event) {
@@ -150,15 +174,15 @@ export default {
 		getData() {
 			this.$axios
 				.get("/blog/list/recommend?page=" + this.page, {
-					headers: {token: localStorage.getItem("token")},
+					headers: { token: localStorage.getItem("token") },
 				})
 				.then((res) => {
 					if (res.data.data.records.length) {
-						this.blogList = res.data.data.records
-						this.mainRightBlogList = this.blogList.slice(0, 6)
+						this.blogList = res.data.data.records;
+						this.mainRightBlogList = this.blogList.slice(0, 6);
 					}
 				});
-		}
+		},
 	},
 };
 </script>
@@ -602,6 +626,6 @@ export default {
 }
 
 .content .article-left {
-	width: 996px;
+	width: 1400px;
 }
 </style>
