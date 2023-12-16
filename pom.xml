@@ -38,12 +38,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <java.version>17</java.version>
+        <java.version>8</java.version>
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <druid.version>1.2.11</druid.version>
 
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
 
         <hutool.version>5.8.11</hutool.version>
         <dynamic-ds.version>3.5.1</dynamic-ds.version>
