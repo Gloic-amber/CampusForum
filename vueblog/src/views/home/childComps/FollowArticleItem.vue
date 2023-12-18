@@ -75,8 +75,8 @@
 			<!--infinite-loading这个组件要放在列表的底部，滚动的盒子里面-->
 			<infinite-loading
 				spinner="spiral"
-				@infinite="infiniteHandler"
-				:distance="200"
+				@infinite="getData"
+				:distance="0"
 				class="infinite-loading-wrap"
 			>
 				<div slot="spinner">加载中...</div>
@@ -130,7 +130,8 @@ export default {
 					headers: { token: localStorage.getItem("token") },
 				})
 				.then((res) => {
-					console.log(res);
+					// console.log(res);
+					// console.log(res.data.code);
 					if (res.data.code == 402 && res.data.status == false) {
 						this.$message({
 							showClose: true,
@@ -149,6 +150,7 @@ export default {
 					}
 				});
 		},
+		// 查看关注的人的博客
 		async infiniteHandler($state) {
 			// this.$axios
 			//   .get("/blog/list?page=" + this.page, {
@@ -160,7 +162,8 @@ export default {
 				})
 				.then((res) => {
 					// console.log(res);
-					// console.log(res.data.data.userAction)
+					// console.log(res.data.data.userAction);
+					// console.log(res.data.data.records.length);
 					if (res.data.data.userAction == null) {
 						this.isShow = false;
 					} else {
@@ -181,6 +184,7 @@ export default {
 					}
 				});
 		},
+
 		getData() {
 			this.$axios
 				.get("/blog/list/follow?page=" + this.page, {

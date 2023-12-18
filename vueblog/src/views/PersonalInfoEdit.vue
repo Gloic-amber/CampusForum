@@ -27,12 +27,12 @@
 						<div v-if="leftNavigation[1].chose">
 							<AccountSet></AccountSet>
 						</div>
-						<div v-if="leftNavigation[2].chose">
+						<!-- <div v-if="leftNavigation[2].chose">
 							<MyCollect></MyCollect>
 						</div>
-						<div v-if="leftNavigation[5].chose">
+						<div v-if="leftNavigation[4].chose">
 							<MyThumbs></MyThumbs>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -65,10 +65,11 @@ export default {
 			leftNavigation: [
 				{ name: "个人资料", chose: true, id: 1 },
 				{ name: "账号设置", chose: false, id: 2 },
-				{ name: "我的收藏", chose: false, id: 3 },
-				{ name: "浏览历史", chose: false, id: 4 },
-				{ name: "内容管理", chose: false, id: 5 },
-				{ name: "我的点赞", chose: false, id: 6 },
+
+				// { name: "浏览历史", chose: false, id: 4 },
+				{ name: "内容管理", chose: false, id: 3 },
+				// { name: "我的收藏", chose: false, id: 4 },
+				// { name: "我的点赞", chose: false, id: 5 },
 			],
 			userMessage: {
 				username: "",
@@ -124,7 +125,7 @@ export default {
 			}
 			this.leftNavigation[index].chose = true;
 
-			if (index === 4) {
+			if (index === 2) {
 				this.$router.push("/ContentManagement");
 			}
 		},
