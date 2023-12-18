@@ -76,7 +76,12 @@ export default {
 .body {
 	width: 100%;
 	min-height: 200px;
-	background: linear-gradient(45deg, rgb(255, 126, 99), rgb(210, 149, 253));
+	background: linear-gradient(
+		45deg,
+		rgb(231, 219, 217),
+		rgb(199, 204, 207),
+		rgb(220, 202, 233)
+	);
 	border-radius: 10px;
 	padding: 15px 20px;
 }

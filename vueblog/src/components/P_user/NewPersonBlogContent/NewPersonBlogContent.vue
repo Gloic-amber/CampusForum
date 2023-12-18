@@ -29,6 +29,19 @@
 			<div v-if="navList[2].chose">
 				<Fans :userId="userId"></Fans>
 			</div>
+			<div v-if="navList[3].chose">
+				<MyThumbs></MyThumbs>
+			</div>
+			<div v-if="navList[4].chose">
+				<MyCollect></MyCollect>
+			</div>
+
+			<!-- <div v-if="leftNavigation[2].chose">
+							<MyCollect></MyCollect>
+						</div>
+						<div v-if="leftNavigation[4].chose">
+							<MyThumbs></MyThumbs>
+			</div> -->
 		</div>
 	</div>
 </template>
@@ -39,6 +52,8 @@ import Home from "@/components/P_user/NewPersonBlogContent/ChildrenPage/home.vue
 import Dynamic from "@/components/P_user/NewPersonBlogContent/ChildrenPage/Dynamic.vue";
 import MyAttention from "@/components/P_user/NewPersonBlogContent/ChildrenPage/MyAttention.vue";
 import Fans from "@/components/P_user/NewPersonBlogContent/ChildrenPage/Fans.vue";
+import MyCollect from "@/components/P_user/PMELeftTabs/MyCollect.vue";
+import MyThumbs from "@/components/P_user/PMELeftTabs/MyThumbs_up.vue";
 export default {
 	name: "NewPersonBlogContent",
 	components: {
@@ -47,6 +62,8 @@ export default {
 		Dynamic,
 		MyAttention,
 		Fans,
+		MyCollect,
+		MyThumbs,
 	},
 	props: {
 		userId: {
@@ -70,9 +87,11 @@ export default {
 		return {
 			// 左侧导航条列表
 			navList: [
-				{ name: "博客", chose: true },
+				{ name: "帖子", chose: true },
 				{ name: "关注", chose: false },
 				{ name: "粉丝", chose: false },
+				{ name: "点赞", chose: false },
+				{ name: "收藏", chose: false },
 				// { name: "动态", chose: false },
 			],
 			// 切换模块时数据获取的激活条件

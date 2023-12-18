@@ -75,40 +75,40 @@ export default {
 			// 书的信息
 			bookList: [
 				{
-					text: "菩提本无树，明镜亦非台",
+					text: "这是装饰1",
 					img: "https://tse4-mm.cn.bing.net/th/id/OIP-C.LWGT942vEnu7BJUpYbAyogHaFP?w=213&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7",
 					id: 1,
 				},
 				{
-					text: "每天都有不一样的答案",
+					text: "这是装饰2",
 					// img:'',
 					id: 2,
 				},
 				{
-					text: "你想看啥",
+					text: "这是装饰3",
 					img: "https://img2.baidu.com/it/u=3496011114,654559464&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=800",
 					id: 3,
 				},
-				{
-					text: "就知道你忍不住看",
-					img: "https://img1.baidu.com/it/u=907523513,3087938631&fm=253&fmt=auto&app=138&f=JPEG?w=231&h=500",
-					id: 4,
-				},
+				// {
+				// 	text: "就知道你忍不住看",
+				// 	img: "https://img1.baidu.com/it/u=907523513,3087938631&fm=253&fmt=auto&app=138&f=JPEG?w=231&h=500",
+				// 	id: 4,
+				// },
+				// {
+				// 	text: "三万里河东入海，五千仞岳上摩天。",
+				// 	img: "https://img0.baidu.com/it/u=3872372553,3353954591&fm=253&fmt=auto&app=138&f=JPEG?w=485&h=500",
+				// 	id: 5,
+				// },
+				// {
+				// 	text: "昆仑山上玉楼前，五色祥光混紫烟。",
+				// 	img: "https://img1.baidu.com/it/u=1637045404,3074886103&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=889",
+				// 	id: 6,
+				// },
 				// {
 				// 	text: "飞流直下三千尺，疑似银河落九天",
 				// 	img: "https://lmg.jj20.com/up/allimg/tp01/1ZZH3243052B-0-lp.jpg",
-				// 	id: 5,
+				// 	id: 7,
 				// },
-				{
-					text: "三万里河东入海，五千仞岳上摩天。",
-					img: "https://img0.baidu.com/it/u=3872372553,3353954591&fm=253&fmt=auto&app=138&f=JPEG?w=485&h=500",
-					id: 5,
-				},
-				{
-					text: "昆仑山上玉楼前，五色祥光混紫烟。",
-					img: "https://img1.baidu.com/it/u=1637045404,3074886103&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=889",
-					id: 6,
-				},
 			],
 		};
 	},

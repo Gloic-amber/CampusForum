@@ -122,7 +122,7 @@
 								type="text"
 								v-model="key"
 								value=""
-								placeholder="迁移学习分析"
+								placeholder="vue的常用指令"
 								style="text-indent: 12px"
 							/>
 							<button id="toolbar-search-button" @click="goSearchBlogs()">

@@ -4,23 +4,26 @@
 			<div class="article-item">
 				<div class="article-title">
 					<a href="#">
-            <span>
-              <router-link
+						<span>
+							<router-link
 								:to="{ name: 'BlogDetail', params: { blogId: item.id } }"
 								target="_blank"
 							>
-                {{ item.title }}
-              </router-link>
-            </span>
+								{{ item.title }}
+							</router-link>
+						</span>
 					</a>
 				</div>
 				<div class="article-content-item">
-					<div class="article-img-left" v-if="item.coverImage!=null&&item.coverImage.trim().length>10">
+					<div
+						class="article-img-left"
+						v-if="item.coverImage != null && item.coverImage.trim().length > 10"
+					>
 						<router-link
 							:to="{ name: 'BlogDetail', params: { blogId: item.id } }"
 							target="_blank"
 						>
-							<img :src="item.coverImage" alt=""/>
+							<img :src="item.coverImage" alt="" />
 						</router-link>
 					</div>
 					<div class="article-content-right">
@@ -33,14 +36,17 @@
 							</div>
 						</router-link>
 						<div class="article-evaluation">
-							<div class="article-good" @click="addLikeNum(item.actionStatus.like,item.id, index)">
+							<div
+								class="article-good"
+								@click="addLikeNum(item.actionStatus.like, item.id, index)"
+							>
 								<!--登录显示-->
 								<img
 									:src="
-                    item.actionStatus.like
-                      ? require('../../../assets/img/home/good_active.png')
-                      : require('../../../assets/img/home/good.png')
-                  "
+										item.actionStatus.like
+											? require('../../../assets/img/home/good_active.png')
+											: require('../../../assets/img/home/good.png')
+									"
 									alt=""
 								/>
 								{{ item.likeNum }} <span>赞</span>
@@ -61,7 +67,7 @@
 		<infinite-loading
 			spinner="spiral"
 			@infinite="infiniteHandler"
-			:distance="200"
+			:distance="100"
 			class="infinite-loading-wrap"
 		>
 			<div slot="spinner">加载中...</div>
@@ -96,8 +102,7 @@ export default {
 	components: {
 		InfiniteLoading,
 	},
-	mounted() {
-	},
+	mounted() {},
 	computed: {},
 	methods: {
 		// 点赞
@@ -105,7 +110,7 @@ export default {
 			this.blogIdForm.blogId = id;
 			this.$axios
 				.post("/blog/action/like", qs.stringify(this.blogIdForm), {
-					headers: {token: localStorage.getItem("token")},
+					headers: { token: localStorage.getItem("token") },
 				})
 				.then((res) => {
 					console.log(res);
@@ -130,7 +135,7 @@ export default {
 		async infiniteHandler($state) {
 			this.$axios
 				.get("/blog/list/new?page=" + this.page, {
-					headers: {token: localStorage.getItem("token")},
+					headers: { token: localStorage.getItem("token") },
 				})
 				.then((res) => {
 					if (res.data.data.records.length) {

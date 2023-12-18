@@ -40,6 +40,9 @@
 				</div> -->
 				<div class="right">
 					<div class="rightcontent">
+						<el-button type="primary" class="gotoIndex" @click="gotoHome"
+							>返回首页</el-button
+						>
 						<ManageContent></ManageContent>
 					</div>
 				</div>
@@ -95,6 +98,10 @@ export default {
 					this.manageList[i].chose = false;
 				}
 			}
+		},
+		// 跳转到主页
+		gotoHome() {
+			this.$router.push("/");
 		},
 	},
 };
@@ -190,5 +197,13 @@ export default {
 .right .rightcontent {
 	width: 100%;
 	height: 100%;
+}
+
+.gotoIndex {
+	margin-top: 5px;
+	margin-left: 5px;
+	/* margin-left: 2px; 如果你想要元素顶着最右边显示，你应该使用 right: 0; 而不是 left: 0; */
+
+	height: 40px;
 }
 </style>

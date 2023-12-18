@@ -27,7 +27,7 @@
 					</div>
 					<div class="btn">
 						<button class="btn-save" @click="saveForm()">保存草稿</button>
-						<button class="btn-publish" @click="submitForm()">发布文章</button>
+						<button class="btn-publish" @click="submitForm()">点击发布</button>
 					</div>
 					<div class="bar-img">
 						<a href="#">

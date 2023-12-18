@@ -73,7 +73,7 @@
 		<infinite-loading
 			spinner="spiral"
 			@infinite="infiniteHandler"
-			:distance="200"
+			:distance="400"
 			class="infinite-loading-wrap"
 		>
 			<div slot="spinner">加载中...</div>
@@ -121,7 +121,8 @@ export default {
 					headers: { token: localStorage.getItem("token") },
 				})
 				.then((res) => {
-					console.log(res);
+					// console.log(res);
+					// console.log(res.data.code);
 					if (res.data.code == 402 && res.data.status == false) {
 						this.$message({
 							showClose: true,
@@ -140,7 +141,8 @@ export default {
 					}
 				});
 		},
-		async infiniteHandler($state) {
+		// async infiniteHandler($state) {
+		async infiniteHandler() {
 			this.$axios
 				.get("/blog/list/recommend?page=" + this.page, {
 					headers: { token: localStorage.getItem("token") },
@@ -158,9 +160,9 @@ export default {
 						this.page += 1; // 下一页
 						this.blogList = this.blogList.concat(res.data.data.records);
 						// console.log(this.blogList);
-						$state.loaded();
+						// $state.loaded();
 					} else {
-						$state.complete();
+						// $state.complete();
 					}
 				});
 		},

@@ -1,10 +1,18 @@
 <template>
 	<div class="container">
 		<top-bar class="top-bar"></top-bar>
+		<!-- <Swiper class="swiper" /> -->
 		<div class="top-content">
 			<div class="main-container">
+				<div class="roll-btn">
+					<button @click="changeContent">
+						<!-- <span>&lt;&gt;</span> -->
+						<!-- <span>换一换</span> -->
+						<!-- <span>&lt;&gt;</span> -->
+						刷新
+					</button>
+				</div>
 				<div class="grid-content">
-					<Swiper class="swiper" />
 					<div
 						class="main-right-item"
 						v-for="(item, index) in mainRightBlogList"
@@ -31,12 +39,6 @@
 						</router-link>
 					</div>
 				</div>
-				<!-- <div class="roll-btn">
-					<button>
-						<span>&lt;&gt;</span>
-						<span>换一换</span>
-					</button>
-				</div> -->
 			</div>
 		</div>
 
@@ -159,6 +161,7 @@ export default {
 	data() {
 		return {
 			page: 1,
+			length: 0,
 			activeName: "second",
 			blogList: [],
 			mainRightBlogList: [],
@@ -168,8 +171,9 @@ export default {
 		this.getData();
 	},
 	methods: {
-		handleClick(tab, event) {
-			console.log(tab, event);
+		handleClick() {
+			console.log(this.activeName);
+			// console.log(tab, event);
 		},
 		getData() {
 			this.$axios
@@ -179,9 +183,36 @@ export default {
 				.then((res) => {
 					if (res.data.data.records.length) {
 						this.blogList = res.data.data.records;
-						this.mainRightBlogList = this.blogList.slice(0, 6);
+						this.length = this.blogList.length;
+						this.mainRightBlogList = this.blogList.slice(0, 3);
 					}
 				});
+		},
+		// 首页随机推荐内容
+		changeContent() {
+			// console.log(this.length);
+			// let x = Math.floor(this.length / 3);
+			// console.log(x);
+			let list_index = [];
+			while (list_index.length < 3) {
+				let rand = Math.floor(Math.random() * this.length);
+				if (!list_index.includes(rand)) {
+					list_index.push(rand);
+				}
+			}
+
+			// console.log(list_index);
+			// this.page = Math.floor(Math.random() * x) + 1;
+			let items = [
+				this.blogList[list_index[0]],
+				this.blogList[list_index[1]],
+				this.blogList[list_index[2]],
+			];
+			// this.mainRightBlogList = this.blogList.slice(
+			// 	3 * (this.page - 1),
+			// 	3 * this.page
+			// );
+			this.mainRightBlogList = items;
 		},
 	},
 };
@@ -198,7 +229,7 @@ export default {
 
 .grid-content {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 20px 12px;
 }
 
@@ -220,7 +251,8 @@ export default {
 .main-right-item .item-img img {
 	width: 100%;
 	/*width: 266.4px;*/
-	height: 140px;
+	/* 控制图片的高度 */
+	height: 220px;
 	/* background-color: #d3dce6; */
 	border-radius: 6px;
 	object-fit: cover;
@@ -253,7 +285,7 @@ export default {
 .main-container .roll-btn {
 	position: absolute;
 	top: 0;
-	left: calc(100% - 20px);
+	right: calc(100%);
 	z-index: 2;
 	transform: translateX(10px) translateY(15px);
 }
