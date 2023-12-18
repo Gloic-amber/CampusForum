@@ -117,7 +117,9 @@ export default {
 	components: {
 		InfiniteLoading,
 	},
-	mounted() {},
+	mounted() {
+		this.getData();
+	},
 	computed: {},
 	methods: {
 		// 点赞
@@ -176,6 +178,24 @@ export default {
 						$state.loaded();
 					} else {
 						$state.complete();
+					}
+				});
+		},
+		getData() {
+			this.$axios
+				.get("/blog/list/follow?page=" + this.page, {
+					headers: { token: localStorage.getItem("token") },
+				})
+				.then((res) => {
+					console.log(res);
+					if (res.data.data.userAction == null) {
+						this.isShow = false;
+					} else {
+						this.isShow = true;
+					}
+					if (res.data.data.records.length) {
+						this.blogList = res.data.data.records;
+						this.length = this.blogList.length;
 					}
 				});
 		},

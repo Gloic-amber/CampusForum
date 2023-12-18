@@ -43,7 +43,7 @@ public class UploadController {
     @PostMapping("/image")
     public String uploadBlogImage(@NotNull MultipartFile file) throws MinioException, IOException {
         log.debug("uploadBlogImage, fileName->{}", file.getOriginalFilename());
-        FileUtils.checkFile(file, 1024 * 1024L, FileType.JPEG, FileType.PNG);
+        FileUtils.checkFile(file, 10 * 1024 * 1024L, FileType.JPEG, FileType.PNG);
         return imageService.uploadBlogImage(file);
     }
 
@@ -57,7 +57,7 @@ public class UploadController {
     public String uploadAvatar(@NotNull MultipartFile file, @NotNull String name) {
         log.debug("uploadAvatar, fileName->{}", file.getOriginalFilename());
         log.info("上传了头像{}", name);
-        FileUtils.checkFile(file, 1024 * 1024L, FileType.JPEG, FileType.PNG);
+        FileUtils.checkFile(file, 10 * 1024 * 1024L, FileType.JPEG, FileType.PNG);
         return imageService.uploadAvatar(file, name);
     }
 

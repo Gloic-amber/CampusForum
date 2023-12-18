@@ -124,7 +124,7 @@ public class RegisterServiceImpl extends ServiceImpl<UserSafetyMapper, UserSafet
         user.setSchoolCode(userRegisterBO.getSchoolCode());
         user.setUsername(userRegisterBO.getUsername());
         user.setNickname(userRegisterBO.getUsername());
-        user.setAvatarUrl("http://127.0.0.1/resource/avatar/"+UserConfig.DefaultAvatar);
+        user.setAvatarUrl(UserConfig.DefaultAvatar);
         user.setRegisterTime(new Timestamp(System.currentTimeMillis()));
         if (userMapper.insert(user) != 1) {
             throw new MapperException("注册失败，信息异常", user);

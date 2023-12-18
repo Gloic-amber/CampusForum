@@ -2,4 +2,4 @@ server:
   port: 40010
 
 user:
-  default-avatar: default_avatar.jpg # 注册时自动填充的头像文件名
+  default-avatar: http://127.0.0.1/resource/avatar/default_avatar.jpg # 注册时自动填充的头像文件名
