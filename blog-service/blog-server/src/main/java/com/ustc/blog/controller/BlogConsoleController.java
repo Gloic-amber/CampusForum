@@ -111,7 +111,7 @@ public class BlogConsoleController {
         blog.setAuthorId(id);
         // 检查封面图
         if (FileUtils.isNotEmpty(blog.getCoverImageFile())) {
-            FileUtils.checkFile(blog.getCoverImageFile(), 1024 * 1024L, FileType.JPEG, FileType.PNG);
+            FileUtils.checkFile(blog.getCoverImageFile(), 10 * 1024 * 1024L, FileType.JPEG, FileType.PNG);
         }
         blogService.saveBlog(blog);
     }
@@ -148,7 +148,7 @@ public class BlogConsoleController {
     public String uploadBlogImg(@NotNull MultipartFile file) {
         Integer id = AuthHelper.getCurrentUserIdOrExit();
         log.debug("uploadBlogImg, fileName->{}, userId->{}", file.getOriginalFilename(), id);
-        FileUtils.checkFile(file, 1024 * 1024L, FileType.JPEG, FileType.PNG);
+        FileUtils.checkFile(file, 10 * 1024 * 1024L, FileType.JPEG, FileType.PNG);
         return blogService.uploadImage(file);
     }
 

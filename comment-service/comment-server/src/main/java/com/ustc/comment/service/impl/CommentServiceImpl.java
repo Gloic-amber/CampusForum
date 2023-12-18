@@ -70,11 +70,10 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment> impl
                 comment.setParentId(parentComment.getParentId() != null ? parentComment.getParentId() : parentComment.getId());
                 comment.setParentUserId(parentComment.getUserId());
             }
-        } else {
-            // 根据id判断博客是否存在
-            result = blogClient.getBlogInfo(comment.getBlogId());
-            exists = result.getStatus() && result.getData() != null;
         }
+        // 根据id判断博客是否存在
+        result = blogClient.getBlogInfo(comment.getBlogId());
+        exists = result.getStatus() && result.getData() != null;
         // todo 优化逻辑
         if (!exists) {
             throw new BusinessException("数据异常");

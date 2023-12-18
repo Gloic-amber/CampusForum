@@ -109,8 +109,8 @@ public class UserController {
     public RestResult<String> updateAvatar(@NotNull MultipartFile avatarFile) {
         Integer id = AuthHelper.getCurrentUserIdOrExit();
         log.debug("updateAvatar,fileSize->{}", avatarFile.getSize());
-        // 检查文件，小于1Mib ,仅支持JPEG和PNG
-        FileUtils.checkFile(avatarFile, 1024 * 1024L, FileType.JPEG, FileType.PNG);
+        // 检查文件，小于10Mib ,仅支持JPEG和PNG
+        FileUtils.checkFile(avatarFile, 10 * 1024 * 1024L, FileType.JPEG, FileType.PNG);
         String avatar = userService.updateAvatar(id, avatarFile);
         if (avatar != null) {
             return RestResult.ok(avatar);

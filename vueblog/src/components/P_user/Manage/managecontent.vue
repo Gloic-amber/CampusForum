@@ -141,7 +141,7 @@ export default {
     methods:{
        async GetData(){
             this.List=[]
-           await this.$axios.get("/blog-console/blog-list",this.config).then(res=>{
+           await this.$axios.get("/blog/console/list",this.config).then(res=>{
                 this.allList=res.data.data.records
                 // this.page=res.data.data.pages
                 this.List=this.List.concat(this.allList)
@@ -159,7 +159,7 @@ export default {
     //   滑动触底时调用
     async infiniteHandler($state) {
         await this.$axios
-          .get("/blog-console/blog-list",this.config)
+          .get("/blog/console/list",this.config)
           .then((res) => {
               if(res.data.data.records.length>0) {
               this.config.params.page +=1;  // 下一页
@@ -178,7 +178,7 @@ export default {
       },
     //   查找关键字博客列表
     SearchBlog(){
-        this.$axios.get("/blog/search",{params:{
+        this.$axios.get("/blog/content/search",{params:{
             key:this.searchblog,
         }}).then(res=>{
             console.log("搜索返回的数据是",res.data)

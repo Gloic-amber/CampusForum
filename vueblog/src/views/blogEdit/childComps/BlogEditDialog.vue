@@ -17,7 +17,7 @@
           <!-- 文章封面图片上传开始 -->
           <el-upload
             ref="uploadxls"
-            action="/blog-console/blog"
+            action="/blog/console/blog"
             list-type="picture-card"
             :on-preview="handlePictureCardPreview"
             :on-remove="handleRemove"
