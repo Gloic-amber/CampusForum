@@ -18,6 +18,18 @@
     </properties>
 
     <dependencies>
+        <!--        grpc的api-->
+        <dependency>
+            <groupId>com.ustc</groupId>
+            <artifactId>common-grpc</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-server-spring-boot-starter</artifactId>
+            <version>2.14.0.RELEASE</version>
+        </dependency>
+        <!--        grpc的api-->
         <dependency>
             <groupId>com.ustc</groupId>
             <artifactId>resource-sdk</artifactId>

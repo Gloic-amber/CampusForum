@@ -19,6 +19,7 @@
         <module>common-regex</module>
         <module>common-redis</module>
         <module>common-amqp</module>
+        <module>common-grpc</module>
     </modules>
 
     <properties>

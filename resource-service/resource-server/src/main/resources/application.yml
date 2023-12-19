@@ -1,6 +1,10 @@
 server:
   port: 40000
 
+grpc:
+  server:
+    port: 40001
+
 mybatis-plus:
   type-aliases-package: com.ustc.resource.pojo  # 实体对象的扫描包
 
