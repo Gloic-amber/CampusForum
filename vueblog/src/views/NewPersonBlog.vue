@@ -4,11 +4,12 @@
 		<!-- 将此页面分成上，中，下三个部分 -->
 		<div class="main">
 			<div class="up">
-				<div class="decoration">
+				<!-- <div class="decoration">
 					<div class="bgimage" v-for="item in bookList" :key="item.id">
 						<Book :text="item.text" :imgone="item.img"></Book>
 					</div>
 				</div>
+ -->
 				<div class="my">
 					<div class="ke">
 						<div class="img">
@@ -25,9 +26,8 @@
 							<div class="personwrite">展示你的个性签名吧</div>
 						</div>
 						<!-- 左部编辑，设置按钮 -->
-						<div class="button">
-							<!-- <button class="set">设置</button> -->
-						</div>
+						<!-- <div class="button">
+						</div> -->
 						<div v-if="localUserId === userMessage.id" class="button">
 							<button class="edit" @click="TurnToEdit()">编辑资料</button>
 							<!-- <button class="set">设置</button> -->
@@ -79,7 +79,8 @@ export default {
 			bookList: [
 				{
 					text: "这是装饰1",
-					img: "https://tse4-mm.cn.bing.net/th/id/OIP-C.LWGT942vEnu7BJUpYbAyogHaFP?w=213&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7",
+					img: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F05%2F20200305204026_zvphr.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1705634745&t=040aceeb0395bfa0870ad9293898a692",
+					// img: "https://tse4-mm.cn.bing.net/th/id/OIP-C.LWGT942vEnu7BJUpYbAyogHaFP?w=213&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7",
 					id: 1,
 				},
 				{
@@ -162,9 +163,9 @@ export default {
 	/* background: url('../assets/img/newPersonBlog/tip.webp') no-repeat; */
 	background: linear-gradient(
 		135deg,
-		rgb(246, 167, 180),
+		rgb(235, 195, 245),
 		white,
-		rgb(125, 224, 251)
+		rgb(230, 82, 62)
 	);
 	border-radius: 5px;
 }
@@ -232,15 +233,15 @@ export default {
 	color: white;
 }
 .ke .button {
-	width: 20%;
-	margin-left: 140px;
+	width: 10%;
+	margin-left: 230px;
 }
 .button button {
 	height: 30px;
 	border: none;
 	border-radius: 5px;
-	color: white;
-	background: rgb(251, 88, 52);
+	color: rgb(255, 255, 255);
+	background: rgb(68, 201, 211);
 	transition: all 0.5s;
 }
 .button button:hover {
