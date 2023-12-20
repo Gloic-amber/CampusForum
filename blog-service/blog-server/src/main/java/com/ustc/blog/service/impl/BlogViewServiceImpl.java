@@ -96,7 +96,12 @@ public class BlogViewServiceImpl extends ServiceImpl<BlogViewMapper, BlogView> i
 		// 设置查询条件：作者为关注的对象，状态为公开，并以id倒序（表示发布时间最新）
 		LambdaQueryWrapper<BlogView> wrapper = new LambdaQueryWrapper<>();
 		RestResult<List<Integer>> result = userClient.getFollowIdList(userId);
-		wrapper.in(result.getStatus() && result.getData().size() > 0, BlogView::getAuthorId, result.getData());
+//		wrapper.in(result.getStatus() && result.getData().size() > 0, BlogView::getAuthorId, result.getData());
+		if (result.getStatus() && result.getData().size() > 0) {
+			wrapper.in(BlogView::getAuthorId, result.getData());
+		} else {
+			wrapper.eq(BlogView::getAuthorId, -1);
+		}
 		wrapper.eq(BlogView::getStatus, BlogStatusType.PUBLISH.getValue()).orderByDesc(BlogView::getId);
 		IPage<BlogView> iPage = new Page<>(page, pageSize);
 		blogViewMapper.selectPage(iPage, wrapper);

@@ -22,7 +22,7 @@
 				<div class="screening-conditionsB">
 					<!-- 对月份和博客列表进行搜索 -->
 					<!-- <div class="time-chose">
-							
+
 							<div class="chosemonth">
 								<el-date-picker
 									v-model="timechose"
@@ -31,7 +31,7 @@
 								>
 								</el-date-picker>
 							</div>
-							
+
 							<div class="search">
 								<el-input
 									placeholder="请输入内容"
@@ -78,13 +78,13 @@
 											size="mini"
 											type="text"
 											@click="cancelDelete(index)"
-											>取消</el-button
+										>取消</el-button
 										>
 										<el-button
 											type="primary"
 											size="mini"
 											@click="deleteItem(item.id, index)"
-											>确定</el-button
+										>确定</el-button
 										>
 									</div>
 									<!-- @click="visible2 = true" -->
@@ -93,7 +93,7 @@
 										style="pointer-events: auto"
 										slot="reference"
 										@click="visible2[index] = true"
-										>删除</el-button
+									>删除</el-button
 									>
 								</el-popover>
 							</div>
