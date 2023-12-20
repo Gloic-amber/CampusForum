@@ -122,7 +122,7 @@
 								type="text"
 								v-model="key"
 								value=""
-								placeholder="vue的常用指令"
+								placeholder=" "
 								style="text-indent: 12px"
 							/>
 							<button id="toolbar-search-button" @click="goSearchBlogs()">

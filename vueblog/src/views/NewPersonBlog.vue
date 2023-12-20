@@ -25,6 +25,9 @@
 							<div class="personwrite">展示你的个性签名吧</div>
 						</div>
 						<!-- 左部编辑，设置按钮 -->
+						<div class="button">
+							<!-- <button class="set">设置</button> -->
+						</div>
 						<div v-if="localUserId === userMessage.id" class="button">
 							<button class="edit" @click="TurnToEdit()">编辑资料</button>
 							<!-- <button class="set">设置</button> -->
@@ -230,7 +233,7 @@ export default {
 }
 .ke .button {
 	width: 20%;
-	margin-left: 50px;
+	margin-left: 140px;
 }
 .button button {
 	height: 30px;
