@@ -8,6 +8,7 @@ package resource;
 
 service ResourceActions {
   rpc getUniversityName (SchoolCode) returns (University);
+  rpc uploadAvatarImage (AvatarImage) returns (ImageUrl);
 }
 
 message SchoolCode {
@@ -16,4 +17,14 @@ message SchoolCode {
 
 message University {
   string name = 1;
+}
+
+message AvatarImage{
+  bytes image = 1;
+  string name = 2;
+  string contentType = 3;
+}
+
+message ImageUrl {
+  string url = 1;
 }
