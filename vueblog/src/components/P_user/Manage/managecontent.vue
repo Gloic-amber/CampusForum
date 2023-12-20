@@ -144,9 +144,12 @@ export default {
 				{ title: "全部可见", chose: false },
 				{ title: "仅我可见", chose: false },
 				{ title: "审核", chose: false },
-				{ title: "草稿箱", chose: false },
 				{ title: "回收站", chose: false },
+				{ title: "草稿箱", chose: false },
 			],
+			ruleForm: {
+				id: 0,
+			},
 			// 显示全部的列表
 			allList: [],
 			// 头部导航选择的部分
@@ -282,22 +285,32 @@ export default {
 		},
 
 		deleteItem(id, index) {
+			this.ruleForm.id = id;
+			console.log(this.ruleForm);
 			console.log("要删除的index是： ", index);
+			console.log("要删除的id是： ", this.ruleForm.id);
 			this.$set(this.visible2, index, false);
 			this.$axios
-				.delete("/blog/console/blog/", qs.stringify(id))
+				.delete("/blog/console/blog/", {
+					headers: {
+						token: localStorage.getItem("token"),
+						"Content-Type": "application/x-www-form-urlencoded",
+					},
+					data: qs.stringify(this.ruleForm),
+				})
 				.then((res) => {
 					console.log("搜索返回的数据是", res.data);
-					if (res.data.data.records.length == 0) {
-						// 显示啥都没搜到
-						this.$refs.firstContent.style.display = "none";
-						this.$refs.noneSearch.style.display = "block";
-					} else {
-						this.$refs.firstContent.style.display = "block";
-						this.$refs.noneSearch.style.display = "none";
-						this.List = res.data.records;
-					}
+					// if (res.data.data.records.length == 0) {
+					// 	// 显示啥都没搜到
+					// 	this.$refs.firstContent.style.display = "none";
+					// 	this.$refs.noneSearch.style.display = "block";
+					// } else {
+					// 	this.$refs.firstContent.style.display = "block";
+					// 	this.$refs.noneSearch.style.display = "none";
+					// 	this.List = res.data.records;
+					// }
 				});
+			localtion.reload();
 		},
 	},
 };

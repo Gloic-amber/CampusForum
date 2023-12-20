@@ -185,7 +185,7 @@ export default {
 				username: "",
 				password: "",
 				mail: "",
-				mailVerify: "",
+				mailVerify: "45",
 				mobile: "",
 				schoolCode: "",
 			},
