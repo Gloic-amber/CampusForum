@@ -311,6 +311,7 @@ export default {
 					// }
 				});
 			localtion.reload();
+			ChoseScreen(1);
 		},
 	},
 };
