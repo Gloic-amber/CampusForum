@@ -72,7 +72,7 @@
 		>
 			<div slot="spinner">加载中...</div>
 			<div slot="no-more">暂无更多数据</div>
-			<div slot="no-results">No results Data</div>
+			<div slot="no-results">没有数据啊</div>
 			<div slot="error" slot-scope="{ trigger }">
 				Error Data, click
 				<a href="javascript:;" @click="trigger">here</a> toretry
@@ -97,6 +97,7 @@ export default {
 			},
 			isLike: false,
 			isShowImg: true,
+			showMessage: "",
 		};
 	},
 	components: {
@@ -132,7 +133,31 @@ export default {
 					}
 				});
 		},
+
 		async infiniteHandler($state) {
+			// if (window.localStorage.isShowAvatar === undefined) {
+			// 	this.$message({
+			// 		showClose: true,
+			// 		message: "请先登录哦~",
+			// 		type: "warning",
+			// 	});
+			// } else {
+			// 	this.$axios
+			// 		.get("/blog/list/new?page=" + this.page, {
+			// 			headers: { token: localStorage.getItem("token") },
+			// 		})
+			// 		.then((res) => {
+			// 			if (res.data.data.records.length) {
+			// 				this.page += 1; // 下一页
+			// 				this.blogList = this.blogList.concat(res.data.data.records);
+			// 				console.log(this.blogList);
+			// 				$state.loaded();
+			// 			} else {
+			// 				$state.complete();
+			// 			}
+			// 		});
+			// }
+			// 游客看不到最新的数据，因为这里需要token才能访问
 			this.$axios
 				.get("/blog/list/new?page=" + this.page, {
 					headers: { token: localStorage.getItem("token") },
@@ -143,6 +168,7 @@ export default {
 						this.blogList = this.blogList.concat(res.data.data.records);
 						console.log(this.blogList);
 						$state.loaded();
+						$state.complete();
 					} else {
 						$state.complete();
 					}

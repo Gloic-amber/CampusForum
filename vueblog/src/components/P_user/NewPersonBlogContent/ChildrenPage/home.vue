@@ -34,8 +34,8 @@
 			class="infinite-loading-wrap"
 		>
 			<div slot="spinner">正在加载中</div>
-			<div slot="no-more">没有更多数据了</div>
-			<div slot="no-results">没有博客</div>
+			<div slot="no-more">没有帖子了</div>
+			<div slot="no-results">没有帖子了</div>
 			<div slot="error" slot-scope="{ trigger }">
 				Error Data, click
 				<a href="javascript:;" @click="trigger">here</a> toretry

@@ -89,7 +89,7 @@
 			</infinite-loading>
 		</template>
 		<div v-else>
-			<div class="no-follow">你没有关注任何人</div>
+			<div class="no-follow">{{ showMessage }}</div>
 		</div>
 	</div>
 </template>
@@ -112,6 +112,7 @@ export default {
 			isLike: false,
 			isShow: true,
 			isShowImg: true,
+			showMessage: "",
 		};
 	},
 	components: {
@@ -186,22 +187,32 @@ export default {
 		},
 
 		getData() {
-			this.$axios
-				.get("/blog/list/follow?page=" + this.page, {
-					headers: { token: localStorage.getItem("token") },
-				})
-				.then((res) => {
-					console.log(res);
-					if (res.data.data.userAction == null) {
-						this.isShow = false;
-					} else {
-						this.isShow = true;
-					}
-					if (res.data.data.records.length) {
-						this.blogList = res.data.data.records;
-						this.length = this.blogList.length;
-					}
-				});
+			if (window.localStorage.isShowAvatar === undefined) {
+				// this.$message({
+				// 	showClose: true,
+				// 	message: "请先登录哦~",
+				// 	type: "warning",
+				// });
+				this.showMessage = "你还没有登录呢";
+			} else {
+				this.$axios
+					.get("/blog/list/follow?page=" + this.page, {
+						headers: { token: localStorage.getItem("token") },
+					})
+					.then((res) => {
+						console.log(res);
+						if (res.data.data.userAction == null) {
+							this.isShow = false;
+						} else {
+							this.isShow = true;
+						}
+						if (res.data.data.records.length) {
+							this.blogList = res.data.data.records;
+							this.length = this.blogList.length;
+						}
+					});
+				this.showMessage = "你没有任何关注";
+			}
 		},
 	},
 };

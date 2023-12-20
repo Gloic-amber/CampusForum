@@ -8,7 +8,7 @@
 					<div class="toolbar-main">
 						<div class="search-box">
 							<input type="text" placeholder="vue的常用指令" v-model="key" />
-							<button id="search" @click="searchBlogs">搜索</button>
+							<button id="search">搜索</button>
 						</div>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 
 				<div class="main-rt">
 					<div class="box related-list">
-						<h3>全站热搜榜</h3>
+						<h3>热榜</h3>
 						<ul>
 							<li
 								v-for="(item, index) in relatedList"
@@ -35,11 +35,11 @@
 								@click="relatedSearch(item)"
 							>
 								<span>{{ index + 1 }}</span>
-								<a>{{ item }}</a>
+								<a>{{ item.title }}</a>
 							</li>
 						</ul>
 					</div>
-					<div class="box">关于我们-{{ key }}</div>
+					<!-- <div class="box">关于我们-{{ key }}</div> -->
 				</div>
 			</div>
 		</div>
@@ -58,30 +58,37 @@ export default {
 		BlogSearchArticleItem,
 		InfiniteLoading,
 	},
+
 	data() {
 		return {
 			key: this.$store.state.searchKey,
 			blogSearchList: [],
 			relatedList: [
-				"蓝桥杯历年真题",
-				"计算机毕业设计",
-				"微信小程序商城搭建",
-				"数据可视化工具",
-				"彻底搞懂背包问题",
-				"队列的基本操作",
-				"迷宫问题求解",
-				"前端练手项目合集",
-				"凯撒密码实现",
-				"数据库从入门到精通",
+				// "蓝桥杯历年真题",
+				// "计算机毕业设计",
+				// "微信小程序商城搭建",
+				// "数据可视化工具",
+				// "彻底搞懂背包问题",
+				// "队列的基本操作",
+				// "迷宫问题求解",
+				// "前端练手项目合集",
+				// "凯撒密码实现",
+				// "数据库从入门到精通",
 			],
+			page: 1,
 		};
 	},
+	mounted() {
+		this.getData();
+	},
+
 	watch: {
 		key(a, b) {
 			//a是value的新值，b是旧值
 			this.key = a;
 		},
 	},
+
 	methods: {
 		// 搜索博客
 		searchBlogs() {
@@ -105,6 +112,46 @@ export default {
 			// 保存key
 			this.$store.commit("copySearchKey", this.key);
 			sessionStorage.setItem("store", JSON.stringify(this.$store.state));
+		},
+
+		getData() {
+			this.$axios
+				.get("/blog/list/recommend?page=" + this.page, {
+					headers: { token: localStorage.getItem("token") },
+				})
+				.then((res) => {
+					// console.log(res);
+					// console.log(res.data.data.userAction)
+					if (res.data.data.userAction == null) {
+						this.isShow = false;
+					} else {
+						this.isShow = true;
+					}
+					if (res.data.data.records.length) {
+						// this.page += 1; // 下一页
+						if (res.data.data.records.length > 5) {
+							this.relatedList = res.data.data.records.slice(0, 5);
+						} else {
+							this.relatedList = res.data.data.records.slice(
+								0,
+								res.data.data.records.length
+							);
+						}
+
+						// console.log(this.blogList);
+						// $state.loaded();
+					} else {
+						// $state.complete();
+					}
+					// if (res.data.data.records.length) {
+					// 	this.page += 1; // 下一页
+					// 	this.blogList = this.blogList.concat(res.data.data.records);
+					// 	// console.log(this.blogList);
+					// 	// $state.loaded();
+					// } else {
+					// 	// $state.complete();
+					// }
+				});
 		},
 	},
 };

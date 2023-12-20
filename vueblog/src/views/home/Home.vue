@@ -57,9 +57,9 @@
 						<el-tab-pane label="最新" name="third">
 							<NewArticleItem />
 						</el-tab-pane>
-						<!--            <el-tab-pane label="热榜" name="fourth">热榜</el-tab-pane>-->
 					</el-tabs>
 				</div>
+				<!--            <el-tab-pane label="热榜" name="fourth">热榜</el-tab-pane>-->
 			</div>
 
 			<!-- 右边-->
