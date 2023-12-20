@@ -36,7 +36,7 @@ public interface ResourceClient {
      *
      * @param file 头像图片文件
      * @param name 图片命名
-     * @return 是否上传成功
+     * @return 访问链接
      */
     @PostMapping(value = "/private/resource/avatar", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     RestResult<String> uploadAvatarImage(@RequestPart("file") MultipartFile file, @RequestParam("name") String name);

@@ -42,6 +42,9 @@ public class LoginServiceImpl implements LoginService {
     @Resource
     private ResourceClient resourceClient;
 
+    @Resource
+    private GrpcClientService grpcClientService;
+
     @Override
     public UserLoginBO login(String username, String password) {
         LambdaQueryWrapper<UserSafety> wrapper = new LambdaQueryWrapper<>();
@@ -53,8 +56,11 @@ public class LoginServiceImpl implements LoginService {
             // 查询院校名称
             UserLoginBO userLoginBO = new UserLoginBO();
             BeanUtils.copyProperties(userView, userLoginBO);
-            RestResult<String> universityName = resourceClient.getUniversityName(userView.getSchoolCode());
-            userLoginBO.setSchoolName(universityName.getData());
+//            RestResult<String> universityName = resourceClient.getUniversityName(userView.getSchoolCode());
+//            userLoginBO.setSchoolName(universityName.getData());
+            // 使用grpc替换openfeigh
+            String universityName = grpcClientService.getUniversityName(userView.getSchoolCode());
+            userLoginBO.setSchoolName(universityName);
             return userLoginBO;
         }
         return null;

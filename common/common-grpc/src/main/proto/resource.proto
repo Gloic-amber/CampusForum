@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.ustc.common.grpc";
+option java_outer_classname = "ResourceProto";
+
+package resource;
+
+service ResourceActions {
+  rpc getUniversityName (SchoolCode) returns (University);
+  rpc uploadAvatarImage (AvatarImage) returns (ImageUrl);
+}
+
+message SchoolCode {
+  int32 code = 1;
+}
+
+message University {
+  string name = 1;
+}
+
+message AvatarImage{
+  bytes image = 1;
+  string name = 2;
+  string contentType = 3;
+}
+
+message ImageUrl {
+  string url = 1;
+}

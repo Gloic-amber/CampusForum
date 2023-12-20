@@ -27,6 +27,8 @@
     <file url="file://$PROJECT_DIR$/common/common-amqp/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/common-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-grpc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/common-grpc/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/common-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/common-redis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/common-regex/src/main/java" charset="UTF-8" />

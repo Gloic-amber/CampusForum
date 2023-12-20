@@ -52,6 +52,9 @@ import static com.ustc.user.utils.RedisConstants.*;
 public class UserServiceImpl extends ServiceImpl<UserViewMapper, UserView> implements UserService {
 
     @Resource
+    private GrpcClientService grpcClientService;
+
+    @Resource
     private UserMapper userMapper;
 
     @Resource
@@ -172,12 +175,16 @@ public class UserServiceImpl extends ServiceImpl<UserViewMapper, UserView> imple
 //            userMapper.updateById(user);
 //        }
         // 上传照片
-        RestResult<String> result = resourceClient.uploadAvatarImage(avatarFile, user.getAvatarUrl());
+//        RestResult<String> result = resourceClient.uploadAvatarImage(avatarFile, user.getAvatarUrl());
+        // 使用grpc服务远程调用照片上传服务
+        // 上传照片
+        String avatarUrl = grpcClientService.uploadAvatarImage(avatarFile, user.getAvatarUrl());
+
         // 更新数据库
-        user.setAvatarUrl(result.getData());
+        user.setAvatarUrl(avatarUrl);
         objectRedisTemplate.delete(USER_SERVICE_INFO_KEY + id);
         userMapper.updateById(user);
-        return result.getStatus() ? result.getData() : null;
+        return avatarUrl;
     }
 
     @Override

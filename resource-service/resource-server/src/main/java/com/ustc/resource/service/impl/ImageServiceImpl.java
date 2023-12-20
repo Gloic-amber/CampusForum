@@ -96,13 +96,13 @@ public class ImageServiceImpl extends ServiceImpl<ImageMapper, Image> implements
             LambdaQueryWrapper<Image> wrapper = new LambdaQueryWrapper<>();
             wrapper.eq(Image::getUrl, md5);
             if (!imageMapper.exists(wrapper)) {
+                // 上传图片
+                minioService.upload(image, md5, bucketName);
                 // 不存在，则新增
                 Image img = new Image();
                 img.setUrl(md5);
                 img.setCreateTime(new Timestamp(System.currentTimeMillis()));
                 imageMapper.insert(img);
-                // 上传图片
-                minioService.upload(image, md5, bucketName);
             }
             // 返回访问链接
             return ResourcePath.imageUrlBase + bucketName + "/" + md5;
