@@ -1,0 +1,2 @@
+启动minio后，需要在nacos配置中心里查看resource-server.yaml配置，在minio中建立两个与配置中桶名称对应的桶。
+此时由于minio中还没有图片，因此项目启动后头像和博客的图片会无法显示。

@@ -1,0 +1,1 @@
+启动rabbitmq后，需要查看nacos配置中心中的default-rabbitmq.yaml配置，在rabbitmq中创建与default-rabbitmq.yaml配置中对应名称的虚拟主机即可
