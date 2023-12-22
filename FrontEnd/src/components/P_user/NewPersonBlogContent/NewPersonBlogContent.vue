@@ -87,7 +87,7 @@ export default {
 		return {
 			// 左侧导航条列表
 			navList: [
-				{ name: "博客", chose: true },
+				{ name: "帖子", chose: true },
 				{ name: "关注", chose: false },
 				{ name: "粉丝", chose: false },
 				{ name: "点赞", chose: false },

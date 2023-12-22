@@ -119,7 +119,7 @@ export default {
 		InfiniteLoading,
 	},
 	mounted() {
-		this.getData();
+		// this.getData();
 	},
 	computed: {},
 	methods: {
@@ -170,7 +170,6 @@ export default {
 					} else {
 						this.isShow = true;
 					}
-
 					if (res.data.data.records.length) {
 						this.page += 1; // 下一页
 						this.blogList = this.blogList.concat(res.data.data.records);

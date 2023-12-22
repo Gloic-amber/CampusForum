@@ -9,7 +9,7 @@ module.exports = {
     proxy: {
       '/api': {
         target:'http://127.0.0.1:80',
-        // target: 'https://api.scblogs.cn/v1',// 后端接口
+        // target: 'http://api.scblogs.cn',// 后端接口
         changeOrigin: true, // 是否跨域
         pathRewrite: {
           '/api': ''
