@@ -166,6 +166,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- 谷歌Guava库，使用布隆过滤器 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+
     </dependencies>
 
     <build>

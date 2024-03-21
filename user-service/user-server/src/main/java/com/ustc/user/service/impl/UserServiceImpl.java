@@ -2,6 +2,9 @@ package com.ustc.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.google.common.base.Charsets;
+import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnels;
 import com.ustc.common.exception.BusinessException;
 import com.ustc.common.exception.MapperException;
 import com.ustc.common.result.RestResult;
@@ -78,23 +81,30 @@ public class UserServiceImpl extends ServiceImpl<UserViewMapper, UserView> imple
     @Resource
     private RedisTemplate<String, Object> objectRedisTemplate;
 
+    @Resource
+    private BloomFilter<CharSequence> bloomFilter;
+
     @Override
     public User getById(Integer id) {
         // 1. 构造redis key
         String key = USER_SERVICE_INFO_KEY + id;
-        // 2. 尝试从redis获取
+        // 2. 布隆过滤器查看是否存在
+        if(!bloomFilter.mightContain(key)){
+            return null;
+        }
+        // 3. 尝试从redis获取
         User user = (User) objectRedisTemplate.opsForValue().get(key);
         if (user != null) {
-            // 3. 存在，直接返回
+            // 4. 存在，直接返回
             return user;
         }
-        // 4. 不存在，查数据库
+        // 5. 不存在，查数据库
         user = super.getById(id);
         if (user != null) {
-            // 4.1 查询成功，存入redis
+            // 5.1 查询成功，存入redis
             objectRedisTemplate.opsForValue().set(key, user, USER_SERVICE_INFO_TTL, TimeUnit.SECONDS);
         }
-        // 5. 返回信息
+        // 6. 返回信息
         return user;
     }
 
